@@ -7,6 +7,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.tooling.preview.Preview
 
 
 @Composable
@@ -17,7 +18,13 @@ fun OutlinedTextField() {
     OutlinedTextField(
         value = text,
         onValueChange = { text = it },
-        label = { Text("Label") }
+        label = {
+            Text("Label")
+        }
     )
 }
-
+@Preview(showSystemUi = true)
+@Composable
+fun OutlinedTextFieldPreview() {
+    OutlinedTextField()
+}
