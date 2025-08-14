@@ -10,6 +10,7 @@ import com.example.studyjetpackcompose.`2FundamentalConcepts`.Greeting
 import com.example.studyjetpackcompose.`3CoreComponents`.AnnotatedStringWithListSample
 import com.example.studyjetpackcompose.`3CoreComponents`.ButtonFileSample
 import com.example.studyjetpackcompose.`3CoreComponents`.PartiallySelectedTextField
+import com.example.studyjetpackcompose.`5BottonSheet`.PartialBottomSheet
 import com.example.studyjetpackcompose.ui.theme.StudyJetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +23,8 @@ class MainActivity : ComponentActivity() {
 //                AccessStringResource()
 //                AccessImage();
 //                AnnotatedStringWithListSample();
-                ButtonFileSample();
+//                ButtonFileSample();
+                PartialBottomSheet()
             }
         }
     }
