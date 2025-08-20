@@ -31,7 +31,6 @@ fun ElevatedCardSample() {
                 modifier = Modifier.padding(16.dp),
                 textAlign = TextAlign.Center)
         }
-
     }
 }
 
