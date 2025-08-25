@@ -23,39 +23,52 @@ import androidx.compose.ui.text.style.LineHeightStyle
 import androidx.compose.ui.tooling.preview.Preview
 
 
+// 一个可组合函数，展示 InputChip 的用法
 @Composable
 fun InputChipsSample() {
-    var enable by remember(){
+    // 定义一个布尔状态，用来控制 Chip 是否显示
+    var enable by remember {
         mutableStateOf(true)
     }
+
+    // 使用 Box 让 Chip 居中显示
     Box(
-        modifier =  Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center,
-    ){
-//        Text("看这块")
-        if (enable){
+        modifier = Modifier.fillMaxSize(),        // 占满全屏
+        contentAlignment = Alignment.Center       // 内容居中
+    ) {
+        // 如果 enable 为 true，则显示 InputChip
+        if (enable) {
             InputChip(
                 onClick = {
+                    // 点击时切换状态（点击后会让 enable = false，从而 Chip 消失）
                     enable = !enable
                 },
                 label = {
+                    // Chip 中间的文字
                     Text("启动")
                 },
-                selected = enable,
+                selected = enable, // Chip 是否处于选中状态（true 时显示选中样式）
+
+                // 左侧头像图标
                 avatar = {
-                    Icon(Icons.Filled.Person,
-                        "加载的表述",
-                        Modifier.size(InputChipDefaults.AvatarSize))
+                    Icon(
+                        Icons.Filled.Person,         // 使用系统自带的 "Person" 图标
+                        contentDescription = "加载的表述", // 图标的无障碍描述
+                        modifier = Modifier.size(InputChipDefaults.AvatarSize) // 头像大小
+                    )
                 },
+
+                // 右侧的关闭图标
                 trailingIcon = {
-                    Icon(Icons.Filled.Close,
-                        "加载的表述",
-                        Modifier.size(InputChipDefaults.AvatarSize))
+                    Icon(
+                        Icons.Filled.Close,          // 使用系统自带的 "关闭" 图标
+                        contentDescription = "加载的表述",
+                        modifier = Modifier.size(InputChipDefaults.AvatarSize) // 图标大小
+                    )
                 }
             )
         }
     }
-
 }
 
 @Preview(showSystemUi = true)
